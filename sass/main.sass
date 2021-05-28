@@ -1,0 +1,117 @@
+$rose: #f3e9f1
+$marron: #261624
+.page-welcome
+    background-color: $rose
+    width: 100%
+    height: 100%
+    position: absolute
+    opacity: 1
+    transition: 2s
+    .logo-welcome
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        width: 100%
+        height: 100%
+        margin-bottom: 20px
+        .bvn
+            font-size: 40px
+            font-weight: 500
+            font-family: Montserrat, sans-serif
+            letter-spacing: 15px
+            animation: fadeIn 2s
+            animation-iteration-count: 1
+
+@keyframes fadeIn
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+
+.late-animation
+
+body
+    margin: 0
+    font-family: Montserrat, sans-serif
+    width: 100%
+    height: 100%
+    header
+        width: 100%
+        height: 80px
+        background-color: $rose
+        display: flex
+        align-items: center
+        justify-content: space-between
+        .left-nav
+            display: flex
+            flex-direction: row
+            width: 15%
+            &-ol
+                list-style-type: none
+                display: flex
+                flex-direction: row
+                justify-content: space-between
+                width: 100%
+                padding: 0
+                margin: 20px
+                &-li
+                    &:hover
+                .icons
+                    width: 20px
+                    height: 20px
+                    text-align: center
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    padding: 10px
+                    &:hover
+                        background-color: #d0bbcc
+                        cursor: pointer
+                        transition: 0.4s
+    .logo
+        width: 260px
+        margin: 0 auto
+    .right-nav
+        display: flex
+        flex-direction: row
+        width: 20%
+        &-ol
+            padding: 0
+            list-style-type: none
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            width: 100%
+            font-weight: 500
+            margin: 20px
+            align-items: center
+            &-li
+                text-align: center
+                transition: 1s
+                display: flex
+                align-items: center
+                cursor: pointer
+                height: 40px !important
+                padding-left: 5px
+                padding-right: 5px
+                &:hover
+                    text-align: center
+                    transition: 1s
+                    background-color: #d0bbcc
+.active
+    font-weight: 600
+    padding-left: 5px
+    padding-right: 5px
+    height: 40px !important
+    text-align: center
+    transition: 1s
+    background-color: #d0bbcc
+
+.produits
+    width: 0%
+    height: 100%
+    background-color: salmon
+    transform: translateX(-100%)
+    position: absolute
+    transition: 2s
