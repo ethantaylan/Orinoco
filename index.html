@@ -7,42 +7,50 @@
     <title>Orinoco</title>
     <link rel="stylesheet" href="stylesheets/main.css">
     <link rel="stylesheet" href="stylesheets/imports.css">
+    <link rel="preload" href="index.js" as="script">
+
     <script src="https://kit.fontawesome.com/6af8af3f86.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <main id="page-welcome" class="late-animation page-welcome">
-        <div class="logo-welcome">
+        <div id="box-welcome" class="logo-welcome">
             <img src="/ressources/logo.png" alt="">
-            <div class="late-animation"><p class="bvn">Bienvenue</p></div>
-            <p id="enter">Enter</p>
+            <p id="nav-enter">Entrez :)</p>
         </div>
     </main>
-    <main class="acceuil">
+    <main class="page-acceuil">
         <header>
             <nav class="left-nav">
                 <ol class="left-nav-ol">
-                    <li><i class="fab fa-facebook-f icons"></i></li>
-                    <li><i class="fab fa-instagram icons"></i></li>
-                    <li><i class="fab fa-facebook-messenger icons"></i></li>
-                    <li><i class="fas fa-envelope icons"></i></li>
+                    <li class="left-nav-li"><i class="fab fa-facebook-f icons"></i></li>
+                    <li class="left-nav-li"><i class="fab fa-instagram icons"></i></li>
+                    <li class="left-nav-li"><i class="fab fa-facebook-messenger icons"></i></li>
+                    <li class="left-nav-li"><i class="fas fa-envelope icons"></i></li>
                     
                 </ol>
             </nav>
-            <img class="logo" src="/ressources/logo.png" alt="Logo Orinoco">
+
+            <div class="emplacement-logo">
+                <img class="logo" src="/ressources/logo.png" alt="Logo Orinoco">
+            </div>
             <nav class="right-nav">
                 <ol class="right-nav-ol">
-                    <li class="right-nav-ol-li">Accueil</li>
-                    <li id="produits" class="right-nav-ol-li active no-hover">Produits</li>
-                    <li class="right-nav-ol-li">Panier</li>
-                    <li class="right-nav-ol-li">Contact</li>
+                    <li id="nav-acceuil" class="right-nav-ol-li">Accueil</li>
+                    <li id="nav-produits" class="right-nav-ol-li no-hover">Produits</li>
+                    <li id="nav-panier" class="right-nav-ol-li">Panier</li>
+                    <li id="nav-contact" class="right-nav-ol-li">Contact</li>
                 </ol>
             </nav>
         </header>
     </main>
-    <main id="page-produits" class="produits">
-        
+    <main id="page-produits" class="page-produits">
+        <span id="close" class="close">X</span>
+        <div class="box-teddy"></div>
+    </main>
+    <main id="page-panier" class="page-panier">
+    </main>
+    <main id="page-contact" class="page-contact">
     </main>
 </body>
-<script src="/index.js"></script>
-
 </html>
+<script src="/index.js"></script>

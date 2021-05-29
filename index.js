@@ -1,17 +1,22 @@
-var pageAcceuil = document.getElementById("page-welcome");
-var enter = document.getElementById("enter"); 
+var navEnter = document.getElementById ("nav-enter")
+var navAccueil = document.getElementById ("nav-accueil")
+var navProduits = document.getElementById ("nav-produits")
+var navPanier = document.getElementById ("navPanier")
+var navContact = document.getElementById ("nav-contact")
+var close = document.getElementById("close")
+
+var pageWelcome = document.getElementById("page-welcome")
+var pageAccueil = document.getElementById("page-accueil")
 var pageProduits = document.getElementById("page-produits")
-var btnProduits = document.getElementById("produits")
+var pagePanier = document.getElementById("page-panier")
+var pageContact = document.getElementById("page-contact")
+var boxWelcome = document.getElementById ("box-welcome")
 
-enter.onclick = function () {
-    pageAcceuil.style.width ="0%";
-    pageAcceuil.style.opacity="0"
+navEnter.onclick = function() {
+    pageWelcome.style.opacity = "0"
+    pageWelcome.style.visibility ="hidden"
 }
 
-btnProduits.onclick = function () {
-    pageProduits.style.transform ="translateX(0%)";
-    btnProduits.style.backgroundColor ="salmon";
+navProduits.onclick = function() {
+    pageProduits.style.width = "100%";
 }
-
-
-
