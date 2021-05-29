@@ -205,13 +205,38 @@ body .right-nav-ol-li:hover {
 
 /* line 164, ../sass/main.sass */
 .box-teddy {
-  width: 100px;
-  height: 100px;
+  width: 300px;
+  height: 200px;
   background-color: #f3e9f1;
+  opacity: 0;
+  transition: 1s;
 }
 
-/* line 169, ../sass/main.sass */
+/* line 171, ../sass/main.sass */
 .page-produits {
   width: 0%;
-  background-color: cyan;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  align-items: center;
+  height: 80%;
+  transition: 1s;
+}
+
+/* line 180, ../sass/main.sass */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 60%;
+  border: 1px solid #261624;
+  margin-top: 40px;
+  transition: 1s;
+}
+
+/* line 190, ../sass/main.sass */
+html {
+  width: 100%;
+  height: 100%;
 }
