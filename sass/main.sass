@@ -1,46 +1,11 @@
 $rose: #f3e9f1
 $marron: #261624
 
-#box-welcome
-    display: flex
-    align-items: center
-    justify-content: space-between
-    height: 70%
-
-.page-welcome
-    background-color: $rose
-    width: 100%
-    height: 100%
-    position: absolute
-    opacity: 1
-    transition: 0.6s
-    z-index: 999
-    display: flex
-    align-items: center
-    .logo-welcome
-        display: flex
-        align-items: center
-        justify-content: center
-        flex-direction: column
-        width: 100%
-        height: 100%
-        margin-bottom: 20px
-        .bvn
-            font-size: 40px
-            font-weight: 500
-            font-family: Montserrat, sans-serif
-            letter-spacing: 15px
-            animation: fadeIn 2s
-            animation-iteration-count: 1
-
 @keyframes fadeIn
     0%
         opacity: 0
     100%
         opacity: 1
-
-.late-animation
-
 body
     margin: 0
     font-family: Montserrat, sans-serif
@@ -53,12 +18,11 @@ body
         display: flex
         align-items: center
         justify-content: space-between
-        z-index: 99
-        position: relative
         .left-nav
             height: 100%
             display: flex
             flex-direction: row
+            width: 25%
             &-ol
                 list-style-type: none
                 display: flex
@@ -66,6 +30,7 @@ body
                 width: 100%
                 padding: 0
                 align-items: center
+                justify-content: space-between
                 &-li
                     text-align: center
                     transition: 1s
@@ -74,6 +39,7 @@ body
                     cursor: pointer
                     height: 40px !important
                     width: 100%
+                    justify-content: center
                 .icons
                     width: 20px
                     height: 20px
@@ -81,8 +47,7 @@ body
                     display: flex
                     justify-content: center
                     align-items: center
-                    margin-left: 10px
-                    margin-right: 10px
+                    padding: 10px
                     &:hover
                         background-color: #d0bbcc
                         cursor: pointer
@@ -95,6 +60,8 @@ body
         flex-direction: row
         height: 100%
         justify-content: flex-end
+        width: 40%
+        margin-right: 20px
         &-ol
             padding: 0
             list-style-type: none
@@ -111,13 +78,14 @@ body
                 align-items: center
                 cursor: pointer
                 height: 40px !important
-                margin-left: 10px
-                margin-right: 10px
                 width: 100%
+                justify-content: center
                 &:hover
                     text-align: center
-                    transition: 1s
-                    background-color: #d0bbcc
+                    transition: 0.4s
+                    color: #795a46
+                    transform: scale(1.1)
+                    cursor: pointer
 .active
     font-weight: 600
     padding-left: 5px
@@ -133,12 +101,10 @@ body
     justify-content: center
     width: 33%
 
-
 .close
     position: absolute
     right: 50px
     top: 120px
-    z-index: 999
     font-size: 30px
     cursor: pointer
     opacity: 0
@@ -150,24 +116,18 @@ body
     cursor: pointer
     margin-top: 20px
     transition: 1s
-    &:hover   
+    &:hover
         transform: scale(1.3)
 
-
 .box-teddy
-    width: 100%
-    height: 100%
-    opacity: 0
     margin: 20px
-    
+
 .page-produits
-    width: 0%
+    width: 100%
     display: flex
     justify-content: space-around
-    opacity: 0
     align-items: center
-    height: 95%
-    transition: 1s
+    height: 100%
     background-image: url("/ressources/produits-bg.png")
     background-repeat: no-repeat
     background-position: bottom
@@ -177,34 +137,32 @@ body
     display: flex
     justify-content: center
     align-items: center
-    width: 80%
+    width: 180%
     height: auto
     margin-top: 40px
-    transition: 1s
+    flex-wrap: wrap
 
 html
     width: 100%
     height: 100%
-    overflow-y: hidden
 
 h1,h2,h3,h4,h5,h6,p,span
     margin: 0
 
 .imgstyle
-    height: 95%
-    width: 95%
+    width: 100%
+    height: 100%
     border-radius: 5px
-    border: 2px solid $marron
-    margin: 5px
-    position: relative
+    border-bottom-left-radius: 0
+    border-bottom-right-radius: 0
+    object-fit: cover
 .titre
     font-weight: 600
 .sous-titre
     font-weight: 400
     text-overflow: ellipsis
-    overflow-x: clip
     width: 80%
-
+    overflow-x: clip
 
 .img-box-teddy
     border-radius: 5px
@@ -213,7 +171,11 @@ h1,h2,h3,h4,h5,h6,p,span
     display: flex
     align-items: center
     flex-direction: column
-    width: 100%
+    width: 300px
+    &:hover
+        transform: scale(1.05)
+        cursor: pointer
+        transition: 0.4s
 
 .title
     display: flex
@@ -236,7 +198,6 @@ h1,h2,h3,h4,h5,h6,p,span
     padding-right: 4px
     padding-top: 2px
     padding-bottom: 2px
-    z-index: 1  
     font-size: 25px
     font-weight: 500
 
@@ -253,4 +214,89 @@ h1,h2,h3,h4,h5,h6,p,span
 .cursor-scale
     cursor: pointer
     &:hover
-        transform: scale(1.1)
+        transform: scale(1.2)
+        transition: 0.4s
+        color: #aa8064
+
+.more
+    width: 200px
+    height: 200px
+    font-size: 55px
+    display: flex
+    align-items: center
+    justify-content: center
+    color: $marron
+    transition: 0.4s 
+    margin: 60px
+    &:hover
+        transform: scale(1.3)
+        cursor: pointer
+        transition: 0.4s
+
+.zoom
+    font-size: 20px
+    position: absolute
+    top: 5%
+    left: 50%
+    transform: translate(-50%)
+    &:hover
+        cursor: pointer
+        font-size: 25px
+        transition: 0.4s
+
+#tda, #tdz, #tde, #tdr, #tdt
+    position: absolute
+    width: 0%
+    object-fit: cover
+    left: 50%
+    top: 10%
+    transform: translateY(-50%)
+    transform: translateX(-50%) 
+    transition: 0.4s
+
+.close-img
+    font-size: 0px
+    position: absolute
+    z-index: 999
+    top: 5%
+    right: 5%
+    padding: 5px
+    transition: 0.4
+
+
+.position-relative
+    position: relative
+
+.page-container
+    width: 100%
+    height: 100%
+    position: absolute
+
+@media screen and ( max-width: 968px )
+    header
+        flex-direction: column
+        height: unset !important
+    .logo
+        margin-top: 20px !important
+        margin-bottom: 20px !important
+    .left-nav
+        justify-content: flex-start !important
+    .right-nav
+        margin-right: 0 !important
+    .page-container
+        height: unset !important
+    .box-teddy
+        width: 100%
+        display: flex
+        justify-content: center
+    .img-box-teddy
+        width: 80%
+    #tdz
+        top: 50%
+    #tde
+        top: 100%
+    #tdr
+        top: 150%
+    #tdt
+        top: 150%
+    

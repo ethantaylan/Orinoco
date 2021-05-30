@@ -1,33 +1,72 @@
-var navEnter = document.getElementById ("nav-enter")
-var navAccueil = document.getElementById ("nav-accueil")
-var navProduits = document.getElementById ("nav-produits")
-var navPanier = document.getElementById ("navPanier")
-var navContact = document.getElementById ("nav-contact")
-var close = document.getElementById("close")
-var boiteA = document.querySelector("#box-teddy-a")
-var boiteZ = document.querySelector("#box-teddy-z")
-var boiteE = document.querySelector("#box-teddy-e")
-var boiteR = document.querySelector("#box-teddy-r")
-var boiteT = document.querySelector("#box-teddy-t")
-var pageWelcome = document.getElementById("page-welcome")
-var pageAccueil = document.getElementById("page-accueil")
-var pageProduits = document.getElementById("page-produits")
-var pagePanier = document.getElementById("page-panier")
-var pageContact = document.getElementById("page-contact")
-var boxWelcome = document.getElementById ("box-welcome")
+var zoomtda = document.querySelector("#zoomtda")
+var zoomtdz = document.querySelector("#zoomtdz")
+var zoomtde = document.querySelector("#zoomtde")
+var zoomtdr = document.querySelector("#zoomtdr")
+var zoomtdt = document.querySelector("#zoomtdt")
 
-navEnter.onclick = function() {
-    pageWelcome.style.opacity = "0"
-    pageWelcome.style.visibility ="hidden"
+var tda = document.getElementById("tda")
+var tdz = document.getElementById("tdz")
+var tde = document.getElementById("tde")
+var tdr = document.getElementById("tdr")
+var tdt = document.getElementById("tdt")
+
+var closeImg = document.getElementById ("close-img")
+var body = document.getElementById("page-container")
+
+zoomtda.onclick = function() {
+    tda.style.width ="60%"
+    tda.style.opacity = "1"
+    closeImg.style.fontSize = "40px"
+    body.style.opacity = "0.3"
 }
 
-navProduits.onclick = function() {
-    pageProduits.style.width = "100%";
-    pageProduits.style.opacity ="1"
-    boiteA.style.opacity = "1"
-    boiteZ.style.opacity = "1"
-    boiteE.style.opacity = "1"
-    boiteR.style.opacity = "1"
-    boiteT.style.opacity = "1"
+zoomtdz.onclick = function() {
+    tdz.style.width ="60%"
+    tdz.style.opacity = "1"
+    closeImg.style.fontSize = "40px"
+    body.style.opacity = "0.3"
 }
 
+zoomtde.onclick = function() {
+    tde.style.width ="60%"
+    tde.style.opacity = "1"
+    closeImg.style.fontSize = "40px"
+    body.style.opacity = "0.3"
+}
+
+zoomtdr.onclick = function() {
+    tdr.style.width ="60%"
+    tdr.style.opacity = "1"
+    closeImg.style.fontSize = "40px"
+    body.style.opacity = "0.3"
+}
+
+zoomtdt.onclick = function() {
+    tdt.style.width ="60%"
+    tdt.style.opacity = "1"
+    closeImg.style.fontSize = "40px"
+    body.style.opacity = "0.3"
+}
+
+closeImg.addEventListener('click', event => {
+    closeImg.style.fontSize = "0";
+    tda.style.width ="0"
+    tdz.style.width ="0"
+    tde.style.width ="0"
+    tdr.style.width ="0"
+    tdt.style.width ="0"
+    body.style.opacity ="1"
+});
+
+document.onkeydown = function(evt) {
+    evt = evt || window.event;
+    if (evt.keyCode == 27) {
+        closeImg.style.fontSize = "0";
+        tda.style.width ="0"
+        tdz.style.width ="0"
+        tde.style.width ="0"
+        tdr.style.width ="0"
+        tdt.style.width ="0"
+        body.style.opacity ="1"
+    }
+};
