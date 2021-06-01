@@ -100,16 +100,5 @@ function appendData(data) {
         teddy3Price.innerHTML = data[2].price +"€"
         teddy4Price.innerHTML = data[3].price +"€"
         teddy5Price.innerHTML = data[4].price +"€"
+        data.substring(0, data.length - 2)
     }
-
-const findElement = (array, data) => {
-for (let element of array) {
-if (element === data) {
-return true;
-}
-}
-return false;
-}
-
-console.log(data)
-
