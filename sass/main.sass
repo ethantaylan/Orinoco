@@ -57,7 +57,7 @@ body
                         cursor: pointer
                         transition: 0.4s
     .logo
-        width: 260px
+        width: 200px
         margin: 0 auto
     .right-nav
         display: flex
@@ -84,6 +84,7 @@ body
                 height: 40px !important
                 width: 100%
                 justify-content: center
+                margin: 10px
                 &:hover
                     text-align: center
                     transition: 0.4s
@@ -104,6 +105,11 @@ body
     align-items: center
     justify-content: center
     width: 33%
+
+.icon-pls-txt
+    display: flex
+    flex-direction: row
+    width: 70%
 
 .close
     position: absolute
@@ -126,12 +132,22 @@ body
 .box-teddy
     margin: 20px
 
+.box-title
+    display: flex
+    flex-direction: row
+    margin: 30px
+    color: $marron
+    width: 100%
+    align-items: center
+    white-space: nowrap
+    justify-content: center
+
 .page-produits
     width: 100%
     display: flex
     justify-content: space-around
     align-items: center
-    height: 100%
+    height: auto
     background-image: url("/ressources/produits-bg.png")
     background-repeat: no-repeat
     background-position: bottom
@@ -139,13 +155,39 @@ body
 
 .container
     display: flex
-    justify-content: center
-    align-items: center
-    width: 180%
+    width: 100%
     height: auto
     margin-top: 40px
     flex-wrap: wrap
+    align-items: center
 
+.tdy--pg-produits    
+    font-size: 40px
+    margin-right: 30px
+
+
+.c-pg-panier
+    background-color: $rose
+    width: 100%
+    height: 100%
+
+.header-pg-panier
+    background-color: $rose
+
+.txt-panier
+    margin-left: 40px
+.block-panier
+    height: 80px
+    width: 80px
+    background-color: salmon
+.box-produits
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    width: 100%
+    height: 100%
+    justify-content: center
+    margin-bottom: 60px
 html
     width: 100%
     height: 100%
@@ -167,6 +209,42 @@ h1,h2,h3,h4,h5,h6,p,span
     text-overflow: ellipsis
     width: 80%
     overflow-x: clip
+    font-family: sans-serif
+    white-space: nowrap
+
+footer
+    height: 60px
+    background-color: $rose
+    display: flex
+    align-items: center
+    justify-content: center
+
+.footer-logo
+    width: 100px
+    filter: saturate(0)
+    &:hover
+        filter: saturate(1)
+        transition: 0.3s
+        cursor: pointer
+
+.barre-longue
+    width: 80%
+    margin-left: 40px
+    height: 2px
+    background-color: $marron
+
+.txt-nos-produits
+    width: 100%
+
+.arrow
+    position: fixed
+    bottom: 3%
+    right: 3%
+    font-size: 30px
+    background-color: white
+    padding-left: 10px
+    padding-right: 10px
+    cursor: pointer
 
 .img-box-teddy
     border-radius: 5px
@@ -175,7 +253,8 @@ h1,h2,h3,h4,h5,h6,p,span
     display: flex
     align-items: center
     flex-direction: column
-    width: 300px
+    width: 275px
+    padding: 9px
     &:hover
         transform: scale(1.05)
         cursor: pointer
@@ -202,15 +281,15 @@ h1,h2,h3,h4,h5,h6,p,span
     padding-right: 4px
     padding-top: 2px
     padding-bottom: 2px
-    font-size: 25px
-    font-weight: 500
+    font-size: 24px
+    font-weight: 100
 
 .price-plus-img
     position: relative
 
 .titleleft
     display: flex
-    justify-content: space-between
+    justify-content: space-around
     flex-direction: column
     height: 90%
     width: 90%
@@ -276,6 +355,79 @@ h1,h2,h3,h4,h5,h6,p,span
     height: 100%
     position: absolute
 
+.fa-envelope
+    font-size: 20px
+
+.linkstyle
+    text-decoration: none !important
+    color: unset !important
+
+.simple-barre
+    height: 100%
+    width: 5px
+    background-color: $marron
+
+#searchbox 
+    background: #d8d8d8
+    border: none
+    
+.nostyle
+    border: none
+    background-color: unset
+    height: 40px
+
+.fa-search
+    margin-left: 10px
+    
+.barre-de-recherche
+    padding-left: 5px
+    padding-right: 5px
+    border-radius: 50px
+    border: 1px solid $marron
+    width: 250px
+
+
+input:focus::-webkit-input-placeholder 
+    color: transparent
+    padding-left: 20px
+
+
+
+ 
+input:focus:-moz-placeholder 
+    color: transparent
+
+
+input:focus::-moz-placeholder 
+    color: transparent
+
+
+#searchbox input 
+    outline: none
+    
+
+
+#searchbox input[type= »text »] 
+    font: bold 12px Arial,Helvetica,Sans-serif
+    color: #bebebe
+    width: 55%
+    padding: 8px 15px 8px 30px
+
+
+#button-submit:hover 
+    background: #4f5356
+
+
+#button-submit:active 
+    background: #5b5d60
+    outline: none
+
+
+
+ 
+#button-submit::-moz-focus-inner 
+    border: 0
+
 @media screen and ( max-width: 968px )
     header
         flex-direction: column
@@ -303,3 +455,14 @@ h1,h2,h3,h4,h5,h6,p,span
         top: 150%
     #tdt
         top: 150%
+    .box-title
+        display: flex
+        flex-direction: column
+    .barre-de-recherche
+        margin-top: 40px
+        width: 100%
+    .right-nav
+        width: 100% !important
+        justify-content: center
+    .container
+        margin-top: 0px !important
