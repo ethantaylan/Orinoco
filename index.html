@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orinoco</title>
     <link rel="stylesheet" href="stylesheets/main.css">
-    <link rel="stylesheet" href="stylesheets/imports.css">
     <link rel="preload" href="index.js" as="script">
 
     <script src="https://kit.fontawesome.com/6af8af3f86.js" crossorigin="anonymous"></script>
@@ -47,7 +45,7 @@
                     </form>
                 </div>
                 </div>
-                <div class="box-produits">
+                <div id="boxProduits" class="box-produits">
                     <div class="box-teddy">
                         <div class="img-box-teddy">
                             <div class="price-plus-img">
@@ -57,8 +55,8 @@
                             </div>
                             <div class="title">
                                 <div class="titleleft">
-                                    <h3 id="tdName1" class="titre">Teddy 1</h3>
-                                    <h4 id="tdDescription1" class="sous-titre">Description Lorem Ipsum</h4>
+                                    <h3 id="tdName1" class="titre"></h3>
+                                    <h4 id="tdDescription1" class="sous-titre"></h4>
                                 </div>
                                 <div class="titleright">
                                     <i class="fas fa-shopping-cart cursor-scale"></i>
@@ -75,8 +73,8 @@
                             </div>
                             <div class="title">
                                 <div class="titleleft">
-                                    <h3 id="tdName2" class="titre">Teddy 1</h3>
-                                    <h4 id="tdDescription2" class="sous-titre">Description Lorem Ipsum</h4>
+                                    <h3 id="tdName2" class="titre"></h3>
+                                    <h4 id="tdDescription2" class="sous-titre"></h4>
                                 </div>
                                 <div class="titleright">
                                     <i class="fas fa-shopping-cart cursor-scale"></i>
@@ -93,8 +91,8 @@
                             </div>
                             <div class="title">
                                 <div class="titleleft">
-                                    <h3 id="tdName3" class="titre">Teddy 1</h3>
-                                    <h4 id="tdDescription3" class="sous-titre">Description Lorem Ipsum</h4>
+                                    <h3 id="tdName3" class="titre"></h3>
+                                    <h4 id="tdDescription3" class="sous-titre"></h4>
                                 </div>
                                 <div class="titleright">
                                     <i class="fas fa-shopping-cart cursor-scale"></i>
@@ -111,11 +109,11 @@
                             </div>
                             <div class="title">
                                 <div class="titleleft">
-                                    <h3 id="tdName4" class="titre">Teddy 1</h3>
-                                    <h4 id="tdDescription4" class="sous-titre">Description Lorem Ipsum</h4>
+                                    <h3 id="tdName4" class="titre"></h3>
+                                    <h4 id="tdDescription4" class="sous-titre"></h4>
                                 </div>
                                 <div class="titleright">
-                                    <i class="fas fa-shopping-cart cursor-scale"></i>
+                                        <i class="fas fa-shopping-cart cursor-scale"></i>
                                 </div>
                             </div>
                         </div>
@@ -129,8 +127,8 @@
                             </div>
                             <div class="title">
                                 <div class="titleleft">
-                                    <h3 id="tdName5" class="titre">Teddy 1</h3>
-                                    <h4 id="tdDescription5" class="sous-titre">Description Lorem Ipsum</h4>
+                                    <h3 id="tdName5" class="titre"></h3>
+                                    <h4 id="tdDescription5" class="sous-titre"></h4>
                                 </div>
                                 <div class="titleright">
                                     <i class="fas fa-shopping-cart cursor-scale"></i>
@@ -138,13 +136,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="more"><i class="fas fa-plus"></i></div>
+                    <div onclick="showHide()" id="moreBtn" class="more"><i class="fas fa-plus"></i></div>
+                </div>
+                <div id="more-products" class="more-products-soon">
+                    <span id="txtProduits">D'autre produits vont être rajoutés bientôt !</span>
                 </div>
         </main>
         <footer>
             <a class="linkstyle" href="index.html"><img class="footer-logo" src="/ressources/logo-footer.png"
                     alt=""></a>
-            <span class="arrow">^</span>
+            <a href="#body"><span class="arrow linkstyle">^</span></a>
         </footer>
     </main>
     <span id="close-img" class="close-img">X</span>

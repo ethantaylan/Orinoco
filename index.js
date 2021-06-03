@@ -79,53 +79,63 @@ fetch("http://localhost:3000/api/teddies")
 
   });
 
+  function appendData(data)
+  {
+   var boxProduits = document.getElementById("box-produits");
+   for(let i=0; i<data.length; i++)
+   {
+    let dBox = document.createElement("div");
+   dBox.className = "box-teddy";
+  
+    let dImgBox = document.createElement("div");
+    dImgBox.className = "img-box-teddy";
+    dBox.appendChild(dImgBox);
+    
+    let dPrice = document.createElement("div");
+    dPrice.className = "price-plus-img";
+    dImgBox.appendChild(dPrice);
+  
+    let sPrice = document.createElement("span");
+    sPrice.className = "price teddy4Price";
+    sPrice.innerText = data[i].price;
+    dPrice.appendChild(sPrice);
+  
+    let iPrice = document.createElement("i");
+    i.className = "fas fa-search-plus zoom";
+    dPrice.appendChild(iPrice);
+  
+    let imgPrice = document.createElement("img");
+    imgPrice.class = "imgstyle";
+    imgPrice.src = data[i].urlImg;
+    dPrice.appendChild(imgPrice);
+  
+    let dTitle = document.createElement("div");
+    dTitle.className = "title";
+    dImgBox.appendChild(dTitle);
+   
+    let dTitleLeft = document.createElement("div");
+    dTitleLeft.className = "titleleft";
+    dTitle.appendChild(dTitleLeft);
+  
+   }
+  }
 
-function appendData(data) {
-  console.log(data);
+function showHide() {
+  var autreProduits = document.getElementById("more-products")
+  var texteProduits = document.getElementById("txtProduits")
+  if (autreProduits.style.height == "250px") {
+    autreProduits.style.height = "0px";
+    texteProduits.style.opacity = "0"
+  }
+  else {
+  autreProduits.style.height = "250px" 
+  texteProduits.style.opacity = "1"
+  }
+}
 
-  /** Selecteurs : prix */
-  var teddy1Price = document.getElementById("td1Price");
-  var teddy2Price = document.getElementById("td2Price");
-  var teddy3Price = document.getElementById("td3Price");
-  var teddy4Price = document.getElementById("td4Price");
-  var teddy5Price = document.getElementById("td5Price");
+function showHideHome() {
+  let boxProduits = document.getElementsById ("boxProduits")
+  if (boxProduits.style.opacity = "1") {
 
-  /** Selecteurs : noms */
-  var teddy1Name = document.getElementById("tdName1");
-  var teddy2Name = document.getElementById("tdName2");
-  var teddy3Name = document.getElementById("tdName3");
-  var teddy4Name = document.getElementById("tdName4");
-  var teddy5Name = document.getElementById("tdName5");
-
-  /** Selecteurs : description */
-  var teddy1Description = document.getElementById("tdDescription1");
-  var teddy2Description = document.getElementById("tdDescription2");
-  var teddy3Description = document.getElementById("tdDescription3");
-  var teddy4Description = document.getElementById("tdDescription4");
-  var teddy5Description = document.getElementById("tdDescription5");
-
-
-  /** Variables des donées des prix  */
-
-teddy1Name.innerHTML = data[0].name;
-teddy2Name.innerHTML = data[1].name;
-teddy3Name.innerHTML = data[2].name;
-teddy4Name.innerHTML = data[3].name;
-teddy5Name.innerHTML = data[4].name;
-
-teddy1Price.innerHTML = data[0].price + "€";
-teddy2Price.innerHTML = data[1].price + "€";
-teddy3Price.innerHTML = data[2].price + "€";
-teddy4Price.innerHTML = data[3].price + "€";
-teddy5Price.innerHTML = data[4].price + "€";
-
-teddy1Description.innerHTML = data[0].description
-teddy2Description.innerHTML = data[1].description
-teddy3Description.innerHTML = data[2].description
-teddy4Description.innerHTML = data[3].description
-teddy5Description.innerHTML = data[4].description
-
-
-teddy1Price = Math.floor(parseInt(price) / 100);
-
+  }
 }
