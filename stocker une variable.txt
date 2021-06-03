@@ -1,0 +1,5 @@
+Pour stocker une valeur et la mettre en variable : 
+
+
+function nomDeVotreFunction() {
+let variable = document.getElementById('l'id de la balise input').value

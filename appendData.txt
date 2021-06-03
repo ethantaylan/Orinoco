@@ -1,0 +1,40 @@
+function appendData(data)
+{
+ var boxProduits = document.getElementById("boxProduits");
+ for(let i=0; i<data.length; i++)
+ {
+  let dBox = document.createElement("div");
+ dBox.className = "box-teddy";
+
+  let dImgBox = document.createElement("div");
+  dImgBox.className = "img-box-teddy";
+  dBox.appendChild(dImgBox);
+  
+  let dPrice = document.createElement("div");
+  dPrice.className = "price-plus-img";
+  dImgBox.appendChild(dPrice);
+
+  let sPrice = document.createElement("span");
+  sPrice.className = "price teddy4Price";
+  sPrice.innerText = data[i].price;
+  dPrice.appendChild(sPrice);
+
+  let iPrice = document.createElement("i");
+  i.className = "fas fa-search-plus zoom";
+  dPrice.appendChild(iPrice);
+
+  let imgPrice = document.createElement("img");
+  imgPrice.class = "imgstyle";
+  imgPrice.src = "./ressources/" + data[i].urlImage;
+  dPrice.appendChild(imgPrice);
+
+  let dTitle = document.createElement("div");
+  dTitle.className = "title";
+  gImgBox.appendChild(dTitle);
+ 
+  let dTitleLeft = document.createElement("div");
+  dTitleLeft.className = "titleleft";
+  dTitle.appendChild(dTitleLeft);
+
+ }
+}
