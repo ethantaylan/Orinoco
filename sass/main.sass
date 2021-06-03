@@ -167,9 +167,12 @@ body
 
 
 .c-pg-panier
-    background-color: $rose
     width: 100%
     height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
 
 .header-pg-panier
     background-color: $rose
@@ -177,9 +180,12 @@ body
 .txt-panier
     margin-left: 40px
 .block-panier
-    height: 80px
-    width: 80px
-    background-color: salmon
+    height: 80%
+    width: 80%
+    background-color: $rose
+    margin: 0
+    border-radius: 5px
+
 .box-produits
     display: flex
     flex-direction: row
@@ -236,6 +242,23 @@ footer
 .txt-nos-produits
     width: 100%
 
+.table
+    width: 60%
+    height: 50%   
+    display: flex
+    justify-content: space-between
+    background-color: $rose
+    padding-left: 40px
+    padding-top: 100px
+
+table
+    height: 35%
+    width: 90%
+
+
+th
+    text-align: left
+
 .arrow
     position: fixed
     bottom: 3%
@@ -282,7 +305,7 @@ footer
     padding-top: 2px
     padding-bottom: 2px
     font-size: 24px
-    font-weight: 100
+    font-weight: 400
 
 .price-plus-img
     position: relative
@@ -346,7 +369,6 @@ footer
     padding: 5px
     transition: 0.4
 
-
 .position-relative
     position: relative
 
@@ -386,14 +408,10 @@ footer
     border: 1px solid $marron
     width: 250px
 
-
 input:focus::-webkit-input-placeholder 
     color: transparent
     padding-left: 20px
 
-
-
- 
 input:focus:-moz-placeholder 
     color: transparent
 
@@ -401,32 +419,32 @@ input:focus:-moz-placeholder
 input:focus::-moz-placeholder 
     color: transparent
 
-
 #searchbox input 
     outline: none
     
-
-
 #searchbox input[type= »text »] 
     font: bold 12px Arial,Helvetica,Sans-serif
     color: #bebebe
     width: 55%
     padding: 8px 15px 8px 30px
 
-
 #button-submit:hover 
     background: #4f5356
-
 
 #button-submit:active 
     background: #5b5d60
     outline: none
 
-
-
- 
 #button-submit::-moz-focus-inner 
     border: 0
+
+.main-int
+    height: 100%
+    width: 80%
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
 
 @media screen and ( max-width: 968px )
     header
