@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,9 +21,11 @@
                 </div>
                 <nav class="right-nav">
                     <ol class="right-nav-ol">
-                        <li id="nav-acceuil" class="right-nav-ol-li"><a class="linkstyle" href="index.html">Accueil</a></li>
+                        <li id="nav-acceuil" class="right-nav-ol-li"><a class="linkstyle" href="index.html">Accueil</a>
+                        </li>
                         <li id="nav-produits" class="right-nav-ol-li no-hover">Produits</li>
-                        <li id="nav-panier" class="right-nav-ol-li"><a class="linkstyle" href="panier.html">Panier</a></li>
+                        <li id="nav-panier" class="right-nav-ol-li"><a class="linkstyle" href="panier.html">Panier</a>
+                        </li>
                         <li class="simple-barre"></li>
                         <li id="nav-contact" class="right-nav-ol-li"><a class="linkstyle"
                                 href="mailto: contact@orinoco.fr"><i class="fas fa-envelope"></i></a></li>
@@ -32,115 +35,25 @@
         </main>
         <main id="page-produits" class="page-produits">
             <span id="close" class="close">X</span>
-            <div class="container">
+            <div id="container-full" class="container">
                 <div class="box-title">
                     <div class="icon-pls-txt txt-panier"> <i class="fas fa-store tdy--pg-produits"></i>
                         <h1 class="txt-produits">Nos produits</h1>
                     </div>
                     <div class="barre-de-recherche">
-                    <form id= »searchbox » method= »get » action= »/search »>
-                        <i class="fas fa-search"></i>
-                        <input class="nostyle" name= »q » type= »text » size= »15″ placeholder= "Rechercher" />
-                        
-                    </form>
+                        <form id=»searchbox » method=»get » action=»/search »>
+                            <i class="fas fa-search"></i>
+                            <input class="nostyle" name=»q » type=»text » size=»15″ placeholder="Rechercher" />
+                        </form>
+                    </div>
                 </div>
-                </div>
-                <div id="boxProduits" class="box-produits">
-                    <div class="box-teddy">
-                        <div class="img-box-teddy">
-                            <div class="price-plus-img">
-                                <i id="zoomtda" class="fas fa-search-plus zoom"></i>
-                                <span id="td1Price" class="price teddy1Price"></span>
-                                <img class="imgstyle" src="./ressources/teddy_1.jpg" alt="">
-                            </div>
-                            <div class="title">
-                                <div class="titleleft">
-                                    <h3 id="tdName1" class="titre"></h3>
-                                    <h4 id="tdDescription1" class="sous-titre"></h4>
-                                </div>
-                                <div class="titleright">
-                                    <i class="fas fa-shopping-cart cursor-scale"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box-teddy">
-                        <div class="img-box-teddy">
-                            <div class="price-plus-img">
-                                <i id="zoomtdz" class="fas fa-search-plus zoom"></i>
-                                <span id="td2Price" class="price"></span>
-                                <img class="imgstyle" src="./ressources/teddy_2.jpg" alt="">
-                            </div>
-                            <div class="title">
-                                <div class="titleleft">
-                                    <h3 id="tdName2" class="titre"></h3>
-                                    <h4 id="tdDescription2" class="sous-titre"></h4>
-                                </div>
-                                <div class="titleright">
-                                    <i class="fas fa-shopping-cart cursor-scale"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box-teddy">
-                        <div class="img-box-teddy">
-                            <div class="price-plus-img">
-                                <span id="td3Price" class="price teddy3Price"></span>
-                                <i id="zoomtde" class="fas fa-search-plus zoom"></i>
-                                <img class="imgstyle" src="./ressources/teddy_3.jpg" alt="">
-                            </div>
-                            <div class="title">
-                                <div class="titleleft">
-                                    <h3 id="tdName3" class="titre"></h3>
-                                    <h4 id="tdDescription3" class="sous-titre"></h4>
-                                </div>
-                                <div class="titleright">
-                                    <i class="fas fa-shopping-cart cursor-scale"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box-teddy">
-                        <div class="img-box-teddy">
-                            <div class="price-plus-img">
-                                <span id="td4Price" class="price teddy4Price"></span>
-                                <i id="zoomtdr" class="fas fa-search-plus zoom"></i>
-                                <img class="imgstyle" src="./ressources/teddy_4.jpg" alt="">
-                            </div>
-                            <div class="title">
-                                <div class="titleleft">
-                                    <h3 id="tdName4" class="titre"></h3>
-                                    <h4 id="tdDescription4" class="sous-titre"></h4>
-                                </div>
-                                <div class="titleright">
-                                        <i class="fas fa-shopping-cart cursor-scale"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box-teddy">
-                        <div class="img-box-teddy">
-                            <div class="price-plus-img">
-                                <span id="td5Price" class="price teddy5Price"></span>
-                                <i id="zoomtdt" class="fas fa-search-plus zoom"></i>
-                                <img id="" class="imgstyle" src="./ressources/teddy_5.jpg" alt="">
-                            </div>
-                            <div class="title">
-                                <div class="titleleft">
-                                    <h3 id="tdName5" class="titre"></h3>
-                                    <h4 id="tdDescription5" class="sous-titre"></h4>
-                                </div>
-                                <div class="titleright">
-                                    <i class="fas fa-shopping-cart cursor-scale"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div id="boxProduits">
                     <div onclick="showHide()" id="moreBtn" class="more"><i class="fas fa-plus"></i></div>
                 </div>
                 <div id="more-products" class="more-products-soon">
                     <span id="txtProduits">D'autre produits vont être rajoutés bientôt !</span>
                 </div>
+            </div>
         </main>
         <footer>
             <a class="linkstyle" href="index.html"><img class="footer-logo" src="/ressources/logo-footer.png"
@@ -149,11 +62,6 @@
         </footer>
     </main>
     <span id="close-img" class="close-img">X</span>
-    <img id="tda" class="tda" src="./ressources/teddy_1.jpg" alt="" srcset="">
-    <img id="tdz" class="tdz" src="./ressources/teddy_2.jpg" alt="" srcset="">
-    <img id="tde" class="tde" src="./ressources/teddy_3.jpg" alt="" srcset="">
-    <img id="tdr" class="tdr" src="./ressources/teddy_4.jpg" alt="" srcset="">
-    <img id="tdt" class="tdt" src="./ressources/teddy_5.jpg" alt="" srcset="">
     <script src="index.js" rel="preload"></script>
 </body>
 
