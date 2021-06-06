@@ -79,7 +79,6 @@ var data = fetch("http://localhost:3000/api/teddies")
     return response.json();
   })
   .then(function (data) {
-    console.log(data);
 
     var container = document.getElementById("boxProduits");
     container.className = "box-produits";
@@ -88,9 +87,16 @@ var data = fetch("http://localhost:3000/api/teddies")
       dBox.className = "box-teddy";
       container.appendChild(dBox);
 
+      let formPlusColorTxt = document.createElement("div")
+      formPlusColorTxt.className = "form-plus-color-txt"
+      let colorTxt = document.createElement("h1")
+      colorTxt.className ="colortxt"
+      colorTxt.innerHTML ="Couleurs : "
+      formPlusColorTxt.appendChild(colorTxt)
       let dImgBox = document.createElement("div");
       dImgBox.className = "img-box-teddy";
       dBox.appendChild(dImgBox);
+      dImgBox.appendChild(formPlusColorTxt)
 
       let dPrice = document.createElement("div");
       dPrice.className = "price-plus-img";
@@ -114,20 +120,21 @@ var data = fetch("http://localhost:3000/api/teddies")
       dTitle.className = "title";
       dImgBox.appendChild(dTitle);
 
-      let teddyOptions = document.createElement("div")
-      teddyOptions.className = "teddyOptions"
-      dImgBox.appendChild(teddyOptions);
-    
-      let colorOptions = document.createElement("div")
-      for (let i = 0; i < data.length; i++)
-        document.createElement("div")
-        document.className = "BoxColors"
-        dImgBox.appendChild(colorOptions)
+      let colorsBox = document.createElement("form")
+      colorsBox.className = "#colorsBox"
+      formPlusColorTxt.appendChild(colorsBox)
+
+      let colorsSelect = document.createElement("select")
+      colorsBox.className = "colorSelect"
+      colorsBox.appendChild(colorsSelect)
+      colorsSelect.className = "colorSelect"
 
 
-
-      
-
+      var options = data[i].colors;
+      options.forEach(function(element,key) {
+          colorsSelect[key] = new Option(element, key);
+      });
+  
       let dTitleLeft = document.createElement("div");
       dTitleLeft.className = "titleleft";
       dTitle.appendChild(dTitleLeft);
@@ -142,8 +149,11 @@ var data = fetch("http://localhost:3000/api/teddies")
       dTitle.appendChild(dTitleRight);
 
       let iPanier = document.createElement("i");
-      iPanier.className = "fas fa-shopping-cart cursor-scale";
+      let iMoins = document.createElement("i")
+      iMoins.className = "fas fa-minus cursor-scale";
+      iPanier.className = "fas fa-plus cursor-scale";
       dTitleRight.appendChild(iPanier);
+      dTitleRight.appendChild(iMoins);
 
       let TitleLeftSousTitre = document.createElement("h4");
       TitleLeftSousTitre.className = "sous-titre";
@@ -156,6 +166,7 @@ var data = fetch("http://localhost:3000/api/teddies")
         TitleLeftSousTitre.style.whiteSpace ="normal"
         TitleLeftSousTitre.style.height ="100%"
       }
+      console.log (data)
   }})
 
 function showHide() {

@@ -344,6 +344,7 @@ th
 
 .cursor-scale
     cursor: pointer
+    position: absolute
     &:hover
         transform: scale(1.2)
         transition: 0.4s
@@ -404,6 +405,24 @@ th
     height: 100%
     position: absolute
 
+.form-plus-color-txt
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: space-around
+    align-items: center
+    order: 2
+    font-size: 20px
+    margin-top: 20px
+    margin-bottom: 20px
+
+.colortxt
+    font-size: 20px
+
+.fa-minus
+    opacity: 0
+.fa-plus
+    opacity: 1
 .fa-envelope
     font-size: 20px
 
@@ -420,18 +439,29 @@ th
     background: #d8d8d8
     border: none
 
-.teddyOptions
+#colorsBox
     height: 100px
-            
+    width: 100%
+
+.colorSelect
+    border: none !important
+    font-size: 20px
+
+.teddyOption 
+    width: 100%
+    height: 100%
+    color: black
+
+
 .nostyle
     border: none
     background-color: unset
     height: 40px
     width: 100%
 
-.BoxColors
+.box-colors
     width: 18%
-    height: 90%
+    height: 90px    
     background-color: red
 
 .fa-search
