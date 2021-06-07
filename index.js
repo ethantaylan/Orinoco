@@ -76,16 +76,13 @@ fetch("http://localhost:3000/api/teddies")
   })
   .then(function (data) {
     appendData(data);
-
-  });
-
-  function appendData(data)
+    function appendData(data)
   {
-   var boxProduits = document.getElementById("box-produits");
-   for(let i=0; i<data.length; i++)
-   {
+  var boxProduits = document.getElementById("box-produits");
+  for(let i=0; i<data.length; i++)
+{
     let dBox = document.createElement("div");
-   dBox.className = "box-teddy";
+    dBox.className = "box-teddy";
   
     let dImgBox = document.createElement("div");
     dImgBox.className = "img-box-teddy";
@@ -112,13 +109,13 @@ fetch("http://localhost:3000/api/teddies")
     let dTitle = document.createElement("div");
     dTitle.className = "title";
     dImgBox.appendChild(dTitle);
-   
+
     let dTitleLeft = document.createElement("div");
     dTitleLeft.className = "titleleft";
     dTitle.appendChild(dTitleLeft);
-  
-   }
+    console.log(appendData)
   }
+}
 
 function showHide() {
   var autreProduits = document.getElementById("more-products")
@@ -132,6 +129,8 @@ function showHide() {
   texteProduits.style.opacity = "1"
   }
 }
+
+  });
 
 function showHideHome() {
   let boxProduits = document.getElementsById ("boxProduits")
