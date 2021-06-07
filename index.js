@@ -147,6 +147,7 @@ var data = fetch("http://localhost:3000/api/teddies")
       let dTitleRight = document.createElement("div");
       dTitleRight.className = "titleright";
       dTitle.appendChild(dTitleRight);
+      dTitleRight.addEventListener("click", console.log("salut"))
 
       let iPanier = document.createElement("i");
       let iMoins = document.createElement("i")
@@ -154,6 +155,10 @@ var data = fetch("http://localhost:3000/api/teddies")
       iPanier.className = "fas fa-plus cursor-scale";
       dTitleRight.appendChild(iPanier);
       dTitleRight.appendChild(iMoins);
+
+      function myFunction(x) {
+        x.classList.toggle("fa-thumbs-down");
+      }
 
       let TitleLeftSousTitre = document.createElement("h4");
       TitleLeftSousTitre.className = "sous-titre";
