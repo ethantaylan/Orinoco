@@ -1,140 +1,134 @@
-var zoomtda = document.querySelector("#zoomtda");
-var zoomtdz = document.querySelector("#zoomtdz");
-var zoomtde = document.querySelector("#zoomtde");
-var zoomtdr = document.querySelector("#zoomtdr");
-var zoomtdt = document.querySelector("#zoomtdt");
-
-var tda = document.getElementById("tda");
-var tdz = document.getElementById("tdz");
-var tde = document.getElementById("tde");
-var tdr = document.getElementById("tdr");
-var tdt = document.getElementById("tdt");
-
-var closeImg = document.getElementById("close-img");
-var body = document.getElementById("page-container");
-
-zoomtda.onclick = function () {
-  tda.style.width = "60%";
-  tda.style.opacity = "1";
-  closeImg.style.fontSize = "40px";
-  body.style.opacity = "0.3";
-};
-
-zoomtdz.onclick = function () {
-  tdz.style.width = "60%";
-  tdz.style.opacity = "1";
-  closeImg.style.fontSize = "40px";
-  body.style.opacity = "0.3";
-};
-
-zoomtde.onclick = function () {
-  tde.style.width = "60%";
-  tde.style.opacity = "1";
-  closeImg.style.fontSize = "40px";
-  body.style.opacity = "0.3";
-};
-
-zoomtdr.onclick = function () {
-  tdr.style.width = "60%";
-  tdr.style.opacity = "1";
-  closeImg.style.fontSize = "40px";
-  body.style.opacity = "0.3";
-};
-
-zoomtdt.onclick = function () {
-  tdt.style.width = "60%";
-  tdt.style.opacity = "1";
-  closeImg.style.fontSize = "40px";
-  body.style.opacity = "0.3";
-};
-
-closeImg.addEventListener("click", (event) => {
-  closeImg.style.fontSize = "0";
-  tda.style.width = "0";
-  tdz.style.width = "0";
-  tde.style.width = "0";
-  tdr.style.width = "0";
-  tdt.style.width = "0";
-  body.style.opacity = "1";
-});
-
-document.onkeydown = function (evt) {
-  if (window.event.keyCode == 27) {
-    closeImg.style.fontSize = "0";
-    tda.style.width = "0";
-    tdz.style.width = "0";
-    tde.style.width = "0";
-    tdr.style.width = "0";
-    tdt.style.width = "0";
-    body.style.opacity = "1";
-  }
-};
-
-fetch("http://localhost:3000/api/teddies")
+var data = fetch("http://localhost:3000/api/teddies")
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
-    appendData(data);
-    function appendData(data)
-  {
-  var boxProduits = document.getElementById("box-produits");
-  for(let i=0; i<data.length; i++)
-{
-    let dBox = document.createElement("div");
-    dBox.className = "box-teddy";
-  
-    let dImgBox = document.createElement("div");
-    dImgBox.className = "img-box-teddy";
-    dBox.appendChild(dImgBox);
-    
-    let dPrice = document.createElement("div");
-    dPrice.className = "price-plus-img";
-    dImgBox.appendChild(dPrice);
-  
-    let sPrice = document.createElement("span");
-    sPrice.className = "price teddy4Price";
-    sPrice.innerText = data[i].price;
-    dPrice.appendChild(sPrice);
-  
-    let iPrice = document.createElement("i");
-    i.className = "fas fa-search-plus zoom";
-    dPrice.appendChild(iPrice);
-  
-    let imgPrice = document.createElement("img");
-    imgPrice.class = "imgstyle";
-    imgPrice.src = data[i].urlImg;
-    dPrice.appendChild(imgPrice);
-  
-    let dTitle = document.createElement("div");
-    dTitle.className = "title";
-    dImgBox.appendChild(dTitle);
 
-    let dTitleLeft = document.createElement("div");
-    dTitleLeft.className = "titleleft";
-    dTitle.appendChild(dTitleLeft);
-    console.log(appendData)
-  }
-}
+    var container = document.getElementById("boxProduits");
+    container.className = "box-produits";
+    for (let i = 0; i < data.length; i++) {
+      var str = data[i].price;
+      var str = String(str).substr(0, 2);
+      console.log(str)
+      let dBox = document.createElement("div");
+      let dImgBox = document.createElement("div");
+      let formPlusColorTxt = document.createElement("div")
+      let colorTxt = document.createElement("h1")
+      let dPrice = document.createElement("div");
+      let sPrice = document.createElement("span");
+      let iPrice = document.createElement("i");
+      let imgPrice = document.createElement("img");
+      let dTitle = document.createElement("div");
+      let colorsSelect = document.createElement("select")
+      let colorsBox = document.createElement("form")
+      let dTitleRight = document.createElement("div");
+      let dTitleLeft = document.createElement("div");
+      let TitleLeftTitle = document.createElement("h3");
+      let iPanier = document.createElement("i");
+      let TitleLeftSousTitre = document.createElement("h4");
+      let options = data[i].colors;
+      let divPanier = document.createElement("div")
+      dImgBox.appendChild(divPanier)
+      divPanier.className = "divpanier"
+      let iconePanier = document.createElement('i')
+      divPanier.appendChild(iconePanier)
+      iconePanier.className= "fas fa-shopping-cart iconepanier"
+      dBox.className = "box-teddy";
+      container.appendChild(dBox);
+      formPlusColorTxt.className = "form-plus-color-txt-off"
+      imgPrice.onclick = function ShowHideColors() {
+        if(formPlusColorTxt.className == "form-plus-color-txt-off") {
+          formPlusColorTxt.className = "form-plus-color-txt-on"
+          iPanier.className = "fas fa-sort-up cursor-scale"
+          TitleLeftSousTitre.style.whiteSpace = "normal"
+
+        }
+
+
+        else {
+          iPanier.className = "fas fa-sort-down cursor-scale"
+          formPlusColorTxt.className = "form-plus-color-txt-off"
+          TitleLeftSousTitre.style.whiteSpace = "nowrap"
+
+        }
+      }
+
+      iPanier.onclick = function()  {
+        if(formPlusColorTxt.className == "form-plus-color-txt-off") {
+          formPlusColorTxt.className = "form-plus-color-txt-on"
+          iPanier.className = "fas fa-sort-up cursor-scale"
+        }
+
+
+        else {
+          iPanier.className = "fas fa-sort-down cursor-scale"
+          formPlusColorTxt.className = "form-plus-color-txt-off"
+        }
+      }
+
+      let cartIcon = document.createElement("i")
+      cartIcon.appendChild(dImgBox)
+
+      colorTxt.className ="colortxt"
+      colorTxt.innerHTML ="Couleurs : "
+      formPlusColorTxt.appendChild(colorTxt)
+      dImgBox.className = "img-box-teddy";
+      dBox.appendChild(dImgBox);
+      dImgBox.appendChild(formPlusColorTxt)
+      dPrice.className = "price-plus-img";
+      dImgBox.appendChild(dPrice);
+      sPrice.className = "price teddy4Price";
+      sPrice.innerText = str + "€";
+      dPrice.appendChild(sPrice);
+      i.className = "fas fa-search-plus zoom";
+      dPrice.appendChild(iPrice);
+      imgPrice.className = "imgstyle";
+      imgPrice.src = data[i].imageUrl;
+      imgPrice.setAttribute('alt', "Image d'ours en peluche")
+      dPrice.appendChild(imgPrice);
+      dTitle.className = "title";
+      dImgBox.appendChild(dTitle);
+      colorsBox.className = "#colorsBox"
+      formPlusColorTxt.appendChild(colorsBox)
+      colorsBox.className = "colorSelect"
+      colorsBox.appendChild(colorsSelect)
+      colorsSelect.className = "colorSelect"
+      options.forEach(function(element,key) {
+          colorsSelect[key] = new Option(element, key);
+      });
+      dTitleLeft.className = "titleleft";
+      dTitle.appendChild(dTitleLeft);
+      TitleLeftTitle.innerHTML = data[i].name;
+      TitleLeftTitle.className = "titre";
+      dTitleLeft.appendChild(TitleLeftTitle);
+      dTitleRight.className = "titleright";
+      dTitle.appendChild(dTitleRight);
+      /* let iMoins = document.createElement("i")
+      iMoins.className = "fas fa-minus cursor-scale";
+      dImgBox.appendChild(iMoins); */
+      iPanier.className = "fas fa-sort-down cursor-scale";
+      dImgBox.appendChild(iPanier);
+      TitleLeftSousTitre.className = "sous-titre";
+      TitleLeftSousTitre.innerHTML = data[i].description;
+      dTitleLeft.appendChild(TitleLeftSousTitre);
+  }})
 
 function showHide() {
-  var autreProduits = document.getElementById("more-products")
-  var texteProduits = document.getElementById("txtProduits")
+  var autreProduits = document.getElementById("more-products");
+  var texteProduits = document.getElementById("txtProduits");
   if (autreProduits.style.height == "250px") {
     autreProduits.style.height = "0px";
-    texteProduits.style.opacity = "0"
-  }
-  else {
-  autreProduits.style.height = "250px" 
-  texteProduits.style.opacity = "1"
+    texteProduits.style.opacity = "0";
+  } else {
+    autreProduits.style.height = "250px";
+    texteProduits.style.opacity = "1";
   }
 }
-
-  });
 
 function showHideHome() {
-  let boxProduits = document.getElementsById ("boxProduits")
-  if (boxProduits.style.opacity = "1") {
-
+  let boxProduits = document.getElementsById("boxProduits");
+  if ((boxProduits.style.opacity = "1")) {
   }
 }
+
+

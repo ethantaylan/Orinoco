@@ -1,4 +1,5 @@
 const teddies = [
+
   {
     "colors": ["Tan", "Chocolate", "Black", "White"],
     "_id": "5be9c8541c9d440000665243",
