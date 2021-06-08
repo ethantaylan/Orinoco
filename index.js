@@ -3,7 +3,6 @@ var data = fetch("http://localhost:3000/api/teddies")
     return response.json();
   })
   .then(function (data) {
-
     var container = document.getElementById("boxProduits");
     container.className = "box-produits";
     for (let i = 0; i < data.length; i++) {
@@ -31,11 +30,15 @@ var data = fetch("http://localhost:3000/api/teddies")
       dImgBox.appendChild(divPanier)
       divPanier.className = "divpanier"
       let iconePanier = document.createElement('i')
+      let iconeCross = document.createElement("i")
+      iconeCross.className= "fas fa-times iconecross"
+      divPanier.appendChild(iconeCross)
       divPanier.appendChild(iconePanier)
-      iconePanier.className= "fas fa-shopping-cart iconepanier"
+      iconePanier.className= "fas fa-shopping-cart first iconepanier"
       dBox.className = "box-teddy";
       container.appendChild(dBox);
       formPlusColorTxt.className = "form-plus-color-txt-off"
+
       imgPrice.onclick = function ShowHideColors() {
         if(formPlusColorTxt.className == "form-plus-color-txt-off") {
           formPlusColorTxt.className = "form-plus-color-txt-on"
@@ -43,13 +46,10 @@ var data = fetch("http://localhost:3000/api/teddies")
           TitleLeftSousTitre.style.whiteSpace = "normal"
 
         }
-
-
         else {
           iPanier.className = "fas fa-sort-down cursor-scale"
           formPlusColorTxt.className = "form-plus-color-txt-off"
           TitleLeftSousTitre.style.whiteSpace = "nowrap"
-
         }
       }
 
@@ -58,11 +58,20 @@ var data = fetch("http://localhost:3000/api/teddies")
           formPlusColorTxt.className = "form-plus-color-txt-on"
           iPanier.className = "fas fa-sort-up cursor-scale"
         }
-
-
         else {
           iPanier.className = "fas fa-sort-down cursor-scale"
           formPlusColorTxt.className = "form-plus-color-txt-off"
+        }
+      }
+
+      divPanier.onclick = function() {
+        if(iconePanier.className == "fas fa-shopping-cart iconepanier") {
+          iconePanier.style.fontSize ="0px"
+          iconeCross.style.fontSize ="30px"
+        }
+        else if (iconeCross.style.fontSize == "30px") {
+          iconePanier.style.fontSize ="30px"
+          iconeCross.style.fontSize = "0px"
         }
       }
 
@@ -119,6 +128,7 @@ function showHide() {
   if (autreProduits.style.height == "250px") {
     autreProduits.style.height = "0px";
     texteProduits.style.opacity = "0";
+    
   } else {
     autreProduits.style.height = "250px";
     texteProduits.style.opacity = "1";
@@ -131,4 +141,7 @@ function showHideHome() {
   }
 }
 
+function onOffProduits(){
+  let allProducts = document.getElementsById("container-full")
+}
 
