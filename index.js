@@ -33,6 +33,8 @@ var data = fetch("http://localhost:3000/api/teddies")
       let navHome = document.getElementById("nav-acceuil")
       let pageProduits = document.getElementById("container-full")
       let pagePanier = document.getElementById("pagePanier")
+      let welcome = document.getElementById("welcome")
+      let loremMsg = document.getElementById("loremMsg")
       divPanier.className = "divpanier"
       iconeCross.className= "fas fa-times iconecross"
       iconePanier.className= "fas fa-shopping-cart first iconepanier"
@@ -125,6 +127,8 @@ var data = fetch("http://localhost:3000/api/teddies")
         navProduits.className ="right-nav-ol-li active"
         navHome.className = "right-nav-ol-li"
         pageProduits.style.opacity = "1"
+        welcome.style.opacity = "0"
+        loremMsg.style.opacity = "0"
 
       }
 
@@ -132,6 +136,10 @@ var data = fetch("http://localhost:3000/api/teddies")
         navHome.className ="right-nav-ol-li active"
         navProduits.className = "right-nav-ol-li"
         pageProduits.style.opacity = "0"
+        welcome.style.opacity = "1"
+        loremMsg.style.opacity = "1"
+
+
 
       }
   }})

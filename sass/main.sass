@@ -79,7 +79,7 @@ body
             list-style-type: none
             display: flex
             flex-direction: row
-            justify-content: space-between
+            justify-content: space-around
             width: 100%
             font-weight: 500
             align-items: center
@@ -111,6 +111,13 @@ body
     justify-content: center
     width: 33%
 
+.loremMsg
+    position: absolute
+    left: 50%
+    transform: translate(-50%)
+    top: 70%
+    font-size: 12px
+    text-align: center
 .widthUnset
     width: unset
 
@@ -200,15 +207,28 @@ body
     font-size: 40px
     margin-right: 30px
 
+.welcomeMsg, .OrinocoMsg
+    position: absolute
+    left: 50%
+    transform: translate(-50%)
+    top: 40%
+    font-size: 40px
+    text-align: center
+
+.welcomeMsg
+    margin-top: 40px
+    font-size: 30px
+    letter-spacing: 4px
+    transition: 1s
+    animation: fadeIn 3s
+
 
 .c-pg-panier
     width: 100%
     height: 100%
     display: flex
-    justify-content: center
     align-items: center
     flex-direction: column
-
 .header-pg-panier
     background-color: $rose
 
@@ -440,7 +460,7 @@ h1
     transition: 0.4
     cursor: pointer
 
-    
+
 
 
 .position-relative
@@ -527,8 +547,9 @@ h1
 
 .simple-barre
     height: 100%
-    width: 5px
+    width: 1px
     background-color: $marron
+    margin: 10px
 
 #searchbox 
     background: #d8d8d8
@@ -795,6 +816,12 @@ button:focus
 
 
 @media screen and ( max-width: 968px )
+    .OrinocoMsg
+        top: 10%
+    .welcomeMsg
+        top: 14%
+    .loremMsg
+        top: 18%
     .wrapper
         margin-top: 0px !important
         box-shadow: none
