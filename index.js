@@ -8,7 +8,6 @@ var data = fetch("http://localhost:3000/api/teddies")
     for (let i = 0; i < data.length; i++) {
       var str = data[i].price;
       var str = String(str).substr(0, 2);
-      console.log(str)
       let dBox = document.createElement("div");
       let dImgBox = document.createElement("div");
       let formPlusColorTxt = document.createElement("div")
@@ -27,57 +26,25 @@ var data = fetch("http://localhost:3000/api/teddies")
       let TitleLeftSousTitre = document.createElement("h4");
       let options = data[i].colors;
       let divPanier = document.createElement("div")
-      dImgBox.appendChild(divPanier)
-      divPanier.className = "divpanier"
       let iconePanier = document.createElement('i')
       let iconeCross = document.createElement("i")
+      let cartIcon = document.createElement("i")
+      let navProduits = document.getElementById("nav-produits")
+      let navHome = document.getElementById("nav-acceuil")
+      let pageProduits = document.getElementById("container-full")
+      let pagePanier = document.getElementById("pagePanier")
+      let welcome = document.getElementById("welcome")
+      let loremMsg = document.getElementById("loremMsg")
+      divPanier.className = "divpanier"
       iconeCross.className= "fas fa-times iconecross"
-      divPanier.appendChild(iconeCross)
-      divPanier.appendChild(iconePanier)
       iconePanier.className= "fas fa-shopping-cart first iconepanier"
       dBox.className = "box-teddy";
-      container.appendChild(dBox);
       formPlusColorTxt.className = "form-plus-color-txt-off"
-
-      imgPrice.onclick = function ShowHideColors() {
-        if(formPlusColorTxt.className == "form-plus-color-txt-off") {
-          formPlusColorTxt.className = "form-plus-color-txt-on"
-          iPanier.className = "fas fa-sort-up cursor-scale"
-          TitleLeftSousTitre.style.whiteSpace = "normal"
-
-        }
-        else {
-          iPanier.className = "fas fa-sort-down cursor-scale"
-          formPlusColorTxt.className = "form-plus-color-txt-off"
-          TitleLeftSousTitre.style.whiteSpace = "nowrap"
-        }
-      }
-
-      iPanier.onclick = function()  {
-        if(formPlusColorTxt.className == "form-plus-color-txt-off") {
-          formPlusColorTxt.className = "form-plus-color-txt-on"
-          iPanier.className = "fas fa-sort-up cursor-scale"
-        }
-        else {
-          iPanier.className = "fas fa-sort-down cursor-scale"
-          formPlusColorTxt.className = "form-plus-color-txt-off"
-        }
-      }
-
-      divPanier.onclick = function() {
-        if(iconePanier.className == "fas fa-shopping-cart iconepanier") {
-          iconePanier.style.fontSize ="0px"
-          iconeCross.style.fontSize ="30px"
-        }
-        else if (iconeCross.style.fontSize == "30px") {
-          iconePanier.style.fontSize ="30px"
-          iconeCross.style.fontSize = "0px"
-        }
-      }
-
-      let cartIcon = document.createElement("i")
+      dImgBox.appendChild(divPanier)
+      divPanier.appendChild(iconeCross)
+      divPanier.appendChild(iconePanier)
+      container.appendChild(dBox);
       cartIcon.appendChild(dImgBox)
-
       colorTxt.className ="colortxt"
       colorTxt.innerHTML ="Couleurs : "
       formPlusColorTxt.appendChild(colorTxt)
@@ -112,14 +79,69 @@ var data = fetch("http://localhost:3000/api/teddies")
       dTitleLeft.appendChild(TitleLeftTitle);
       dTitleRight.className = "titleright";
       dTitle.appendChild(dTitleRight);
-      /* let iMoins = document.createElement("i")
-      iMoins.className = "fas fa-minus cursor-scale";
-      dImgBox.appendChild(iMoins); */
       iPanier.className = "fas fa-sort-down cursor-scale";
       dImgBox.appendChild(iPanier);
       TitleLeftSousTitre.className = "sous-titre";
       TitleLeftSousTitre.innerHTML = data[i].description;
       dTitleLeft.appendChild(TitleLeftSousTitre);
+
+      /* functions pour show et hide le choix de la couleur */
+      imgPrice.onclick = function ShowHideColors() {
+
+      if(formPlusColorTxt.className == "form-plus-color-txt-off") {
+        formPlusColorTxt.className = "form-plus-color-txt-on"
+        iPanier.className = "fas fa-sort-up cursor-scale"
+        TitleLeftSousTitre.style.whiteSpace = "normal"
+
+      }
+      else {
+        iPanier.className = "fas fa-sort-down cursor-scale"
+        formPlusColorTxt.className = "form-plus-color-txt-off"
+        TitleLeftSousTitre.style.whiteSpace = "nowrap"
+      }
+    }
+      /* fin des functions pour show et hide le choix de la couleur */
+
+    iPanier.onclick = function()  {
+      if(formPlusColorTxt.className == "form-plus-color-txt-off") {
+        formPlusColorTxt.className = "form-plus-color-txt-on"
+        iPanier.className = "fas fa-sort-up cursor-scale"
+      }
+      else {
+        iPanier.className = "fas fa-sort-down cursor-scale"
+        formPlusColorTxt.className = "form-plus-color-txt-off"
+      }
+    }
+
+    divPanier.onclick = function() {
+      if(iconePanier.className == "fas fa-shopping-cart iconepanier") {
+        iconePanier.style.fontSize ="0px"
+        iconeCross.style.fontSize ="30px"
+      }
+      else if (iconeCross.style.fontSize == "30px") {
+        iconePanier.style.fontSize ="30px"
+        iconeCross.style.fontSize = "0px"
+      }
+    }
+      navProduits.onclick = function() {
+        navProduits.className ="right-nav-ol-li active"
+        navHome.className = "right-nav-ol-li"
+        pageProduits.style.opacity = "1"
+        welcome.style.opacity = "0"
+        loremMsg.style.opacity = "0"
+
+      }
+
+      navHome.onclick = function() {
+        navHome.className ="right-nav-ol-li active"
+        navProduits.className = "right-nav-ol-li"
+        pageProduits.style.opacity = "0"
+        welcome.style.opacity = "1"
+        loremMsg.style.opacity = "1"
+
+
+
+      }
   }})
 
 function showHide() {
@@ -135,13 +157,5 @@ function showHide() {
   }
 }
 
-function showHideHome() {
-  let boxProduits = document.getElementsById("boxProduits");
-  if ((boxProduits.style.opacity = "1")) {
-  }
-}
 
-function onOffProduits(){
-  let allProducts = document.getElementsById("container-full")
-}
 
