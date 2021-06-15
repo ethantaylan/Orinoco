@@ -167,11 +167,11 @@ body
     display: flex
     justify-content: space-around
     align-items: center
-    height: 100%
     background-image: url("./ressources/produits-bg.png")
     background-repeat: no-repeat
     background-position: bottom
     background-size: cover
+    height: 0.01px
 
 .plusProducts
     font-size: 40px!important
@@ -180,6 +180,7 @@ body
 #container-full
     opacity: 0
     transition: 0.4s
+
         
 
 .more-products-soon
@@ -197,7 +198,7 @@ body
 .container
     display: flex
     width: 100%
-    height: auto
+    height: 100%
     margin-top: 40px
     flex-wrap: wrap
     align-items: center
@@ -892,19 +893,18 @@ button:focus
         width: 100% !important
         justify-content: center
     .container
+        height: 100% !important
         margin-top: 0px !important
     .imgstyle
         height: 250px !important
     #txtProduits
         font-size: 20px
         font-weight: 500
-
     .icon-pls-txt
         margin-left: 0 !important
         flex-direction: column !important
         align-items: center !important
         text-align: center !important
-
     .txt-produits
         white-space: normal !important
         text-align: center !important

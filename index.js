@@ -123,6 +123,8 @@ var data = fetch("http://localhost:3000/api/teddies")
         iconeCross.style.fontSize = "0px"
       }
     }
+    
+    /* bouton de navigation produits qui affiche les produits */
       navProduits.onclick = function() {
         navProduits.className ="right-nav-ol-li active"
         navHome.className = "right-nav-ol-li"
@@ -136,6 +138,7 @@ var data = fetch("http://localhost:3000/api/teddies")
         navHome.className ="right-nav-ol-li active"
         navProduits.className = "right-nav-ol-li"
         pageProduits.style.opacity = "0"
+        pageProduits.style.height = "100%"
         welcome.style.opacity = "1"
         loremMsg.style.opacity = "1"
 
