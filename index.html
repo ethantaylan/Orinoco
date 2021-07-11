@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="stylesheets/main.css">
     <link rel="preload" href="index.js" as="script">
     <link rel="icon" type="image/png" href="./ressources/favicon.png">
-    <meta name="description" content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s">
+    <meta name="description"
+        content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s">
     <script src="https://kit.fontawesome.com/6af8af3f86.js" crossorigin="anonymous"></script>
 </head>
 
@@ -24,7 +25,7 @@
                     <ol class="right-nav-ol">
                         <li id="nav-acceuil" class="right-nav-ol-li active">Accueil</li>
                         <li id="nav-produits" class="right-nav-ol-li">Produits</li>
-                        <li id="nav-panier" class="right-nav-ol-li"><a class="linkstyle" href="panier.html">Panier</a></li>
+                        <li id="nav-panier" class="right-nav-ol-li">Panier</li>
                         <li class="simple-barre"></li>
                         <li id="nav-contact" class="right-nav-ol-li"><a class="linkstyle"
                                 href="mailto: contact@orinoco.fr"><i class="fas fa-envelope"></i></a></li>
@@ -32,7 +33,9 @@
                 </nav>
             </header>
             <h1 id="welcome" class="OrinocoMsg">Orinoco <br> <span class="welcomeMsg OrinocoMsg">Bienvenue</span></h1>
-            <h4 id ="loremMsg" class="loremMsg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis accusamus maiores ipsam consectetur architecto dicta nam ab. Reiciendis nobis porro placeat aliquam, dolorem repellat sapiente ut dicta corrupti nulla quam.</h4>
+            <h4 id="loremMsg" class="loremMsg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis
+                accusamus maiores ipsam consectetur architecto dicta nam ab. Reiciendis nobis porro placeat aliquam,
+                dolorem repellat sapiente ut dicta corrupti nulla quam.</h4>
         </main>
         <main id="page-produits" class="page-produits">
             <div id="container-full" class="container">
@@ -43,7 +46,8 @@
                     <div class="barre-de-recherche">
                         <form id=»searchbox » method=»get » action=»/search »>
                             <i class="fas fa-search noMargin"></i>
-                            <input class="noMargin backgroundColorFirstColor" name=»q » type=»text » size=»15″ placeholder="Rechercher" />
+                            <input class="noMargin backgroundColorFirstColor" name=»q » type=»text » size=»15″
+                                placeholder="Rechercher" />
                         </form>
                     </div>
                 </div>
@@ -58,13 +62,144 @@
             </div>
             <script src="./index.js"></script>
         </main>
-        <footer>
-            <a class="linkstyle" href="index.html"><img class="footer-logo" src="./ressources/logo-footer.png"
-                    alt=""></a>
-            <a href="#body"><span class="arrow">^</span></a>
-        </footer>
     </main>
-    
+    <!--Main page acc/produits-->
+    <main id="pagePanier" class="c-pg-panier">
+        <header class="header-pg-panier">
+            <div class="emplacement-logo">
+                <img class="logo" src="./ressources/logo.png" alt="Logo Orinoco">
+            </div>
+            <nav class="right-nav">
+                <ol class="right-nav-ol">
+                    <a class="linkstyle" href="index.html">
+                        <li id="nav-acceuil" class="right-nav-ol-li">Retour</li>
+                    </a>
+                    <li class="simple-barre"></li>
+                    <a class="linkstyle" href="mailto: contact@orinoco.fr">
+                        <li id="nav-contact" class="right-nav-ol-li">
+                            <i class="fas fa-envelope"></i>
+                        </li>
+                    </a>
+                </ol>
+            </nav>
+        </header>
+        <!--page panier-->
+        <div class="wrapper mgtop20px">
+            <div class="containerForm">
+                <div>
+                    <div class="">
+                        <h1>
+                            <i class="fas fa-shopping-cart"></i>
+                            Panier
+                        </h1>
+                    </div>
+                </div>
+                <table class="widthFull">
+                    <thead>
+                        <tr>
+                            <th class="paddingTable">Produit</th>
+                            <th class="paddingTable">Quantité</th>
+                            <th class="paddingTable">Prix</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="premierProduit" class="paddingTable"></td>
+                            <td class="paddingTable">
+                                <form>
+                                    <select class="noMargin " name="quantity">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                </form>
+                            </td class="paddingTable">
+                            <td class="paddingTable">29.00€</td>
+                        </tr>
+                        <tr>
+                            <td class="paddingTable">Total</td>
+                            <td>
+                            </td>
+                            <td class="text-center paddingTable" id="totalPrice">29.00€</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--INPUT-->
+        <div class="wrapper">
+            <div class="containerForm">
+                <form action="">
+                    <h1>
+                        <i class="fas fa-shipping-fast"></i>
+                        Détails d'expédition
+                    </h1>
+                    <div class="name">
+                        <div class="formStyles">
+                            <label for="f-name">Prénom</label>
+                            <input type="text" name="f-name">
+                        </div>
+                        <div class="formStyles">
+                            <label for="l-name">Nom</label>
+                            <input type="text" name="l-name">
+                        </div>
+                    </div>
+                    <div class="street formStyles">
+                        <label for="name">Numéro + Rue</label>
+                        <input type="text" name="address">
+                    </div>
+                    <div class="address-info">
+                        <div class="formStyles">
+                            <label for="city">Ville</label>
+                            <input type="text" name="city">
+                        </div>
+                        <div class="formStyles">
+                            <label for="state">Pays</label>
+                            <input type="text" name="state">
+                        </div>
+                        <div class="formStyles">
+                            <label for="zip">Code postale</label>
+                            <input type="text" name="zip">
+                        </div>
+                    </div>
+                    <h1>
+                        <i class="far fa-credit-card"></i> Informations de paiement
+                    </h1>
+                    <div class="cc-num">
+                        <label for="card-num">Numéro de carte de crédit</label>
+                        <input type="text" name="card-num">
+                    </div>
+                    <div class="cc-info">
+                        <div>
+                            <label for="card-num">Date d'expiration</label>
+                            <input type="text" name="expire">
+                        </div>
+                        <div class="formStyles">
+                            <label for="card-num">CVV</label>
+                            <input type="text" name="security">
+                        </div>
+                    </div>
+                    <!--Bouton de validation-->
+                    <div class="btns">
+                        <a href="./confirmation.html">
+                            <i class="fas fa-check"></i>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--Fin main page acc/produits-->
+    </main>
+
 </body>
 
 </html>

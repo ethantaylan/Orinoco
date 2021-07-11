@@ -32,9 +32,10 @@ var data = fetch("http://localhost:3000/api/teddies")
       let navProduits = document.getElementById("nav-produits")
       let navHome = document.getElementById("nav-acceuil")
       let pageProduits = document.getElementById("container-full")
-      let pagePanier = document.getElementById("pagePanier")
       let welcome = document.getElementById("welcome")
       let loremMsg = document.getElementById("loremMsg")
+      let navPanier = document.getElementById("nav-panier")
+      let pagePanier = document.getElementById("pagePanier")
       divPanier.className = "divpanier"
       iconeCross.className= "fas fa-times iconecross"
       iconePanier.className= "fas fa-shopping-cart first iconepanier"
@@ -112,18 +113,12 @@ var data = fetch("http://localhost:3000/api/teddies")
         formPlusColorTxt.className = "form-plus-color-txt-off"
       }
     }
-
-    divPanier.onclick = function() {
-      if(iconePanier.className == "fas fa-shopping-cart iconepanier") {
-        iconePanier.style.fontSize ="0px"
-        iconeCross.style.fontSize ="30px"
-      }
-      else if (iconeCross.style.fontSize == "30px") {
-        iconePanier.style.fontSize ="30px"
-        iconeCross.style.fontSize = "0px"
-      }
+    /* bouton de navigation produits qui affiche lepanier */
+    navPanier.onclick = function() {
+      pagePanier.style.zIndex = "9"
+      pagePanier.style.opacity ="1"
     }
-    
+
     /* bouton de navigation produits qui affiche les produits */
       navProduits.onclick = function() {
         navProduits.className ="right-nav-ol-li active"
@@ -131,6 +126,7 @@ var data = fetch("http://localhost:3000/api/teddies")
         pageProduits.style.opacity = "1"
         welcome.style.opacity = "0"
         loremMsg.style.opacity = "0"
+        container.style.height ="100%"
 
       }
 
@@ -141,9 +137,6 @@ var data = fetch("http://localhost:3000/api/teddies")
         pageProduits.style.height = "100%"
         welcome.style.opacity = "1"
         loremMsg.style.opacity = "1"
-
-
-
       }
   }})
 
