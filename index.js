@@ -31,7 +31,7 @@ var data = fetch("http://localhost:3000/api/teddies")
       let cartIcon = document.createElement("i")
       let navProduits = document.getElementById("nav-produits")
       let navHome = document.getElementById("nav-acceuil")
-      let pageProduits = document.getElementById("container-full")
+      let pageProduits = document.getElementById("page-produits")
       let welcome = document.getElementById("welcome")
       let loremMsg = document.getElementById("loremMsg")
       let navPanier = document.getElementById("nav-panier")
@@ -113,10 +113,29 @@ var data = fetch("http://localhost:3000/api/teddies")
         formPlusColorTxt.className = "form-plus-color-txt-off"
       }
     }
-    /* bouton de navigation produits qui affiche lepanier */
+    /* bouton de navigation panier qui affiche le panier */
     navPanier.onclick = function() {
       pagePanier.style.zIndex = "9"
       pagePanier.style.opacity ="1"
+      pagePanier.style.display ="flex"
+      pagePanier.style.height ="100%"
+      pagePanier.style.width ="100%"
+
+      pageProduits.style.zIndex = "-9"
+      pageProduits.style.opacity ="0"
+      pageProduits.style.height = "0.01px"
+      pageProduits.style.display = "none"
+
+      welcome.style.opacity = "0"
+      loremMsg.style.opacity = "0"
+      welcome.style.display ="none"
+      loremMsg.style.display ="none"
+
+      navPanier.className ="right-nav-ol-li active"
+      navHome.className ="right-nav-ol-li "
+      navProduits.className ="right-nav-ol-li "
+
+
     }
 
     /* bouton de navigation produits qui affiche les produits */
@@ -127,9 +146,13 @@ var data = fetch("http://localhost:3000/api/teddies")
         welcome.style.opacity = "0"
         loremMsg.style.opacity = "0"
         container.style.height ="100%"
-
+        pagePanier.style.zIndex = "-99"
+        pagePanier.style.opacity = "0"
+        pageProduits.style.display ="flex"
+        navPanier.className ="right-nav-ol-li "
       }
 
+    /* bouton de navigation acceuil */
       navHome.onclick = function() {
         navHome.className ="right-nav-ol-li active"
         navProduits.className = "right-nav-ol-li"
@@ -137,6 +160,15 @@ var data = fetch("http://localhost:3000/api/teddies")
         pageProduits.style.height = "100%"
         welcome.style.opacity = "1"
         loremMsg.style.opacity = "1"
+        pageProduits.style.display = "none"
+        welcome.style.display ="block"
+        loremMsg.style.display ="block"
+        navPanier.className ="right-nav-ol-li "
+
+      }
+
+      let premierProduit = document.getElementById("premierProduit")
+      premierProduit.onclick = function() {
       }
   }})
 
